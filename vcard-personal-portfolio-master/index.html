@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- #SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Sudhanshu Kumar Pandey" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Sudhanshu Pandey">Sudhanshu Pandey</h1>
+          <p class="title">MCA Student</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:sudhanshualka084@gmail.com" class="contact-link">sudhanshualka084@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+919973410677" class="contact-link">+91 99734 10677</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="2000-08-30">August 30, 2000</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Gla university , Mathura</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://linkedin.com/in/sudhanshu-kumar-pandey-429a78210" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/080852" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!-- #MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- #NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="showSection('about')">About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="showSection('resume')">Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="showSection('portfolio')">Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="showSection('contact')">Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- #CONTENT -->
+      <section id="about" class="section active">
+        <h2>About Me</h2>
+        <p>Driven and technically proficient MCA student with a passion for programming and problem-solving. I have experience in Full Stack Web Development, Data Analytics, and AI projects.</p>
+      </section>
+
+      <section id="resume" class="section">
+        <h2>Resume</h2>
+        <p>Download my full resume <a href="./assets/resume.pdf" target="_blank">here</a>.</p>
+      </section>
+
+      <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <ul>
+          <li><a href="https://github.com/080852/ai-pdf-summarizer-chat-app">AI-PDF Summarizer Chat App</a></li>
+          <li>Fitness Website</li>
+          <li>Online Exam Management System</li>
+          <li>Object Detection</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:sudhanshualka084@gmail.com">sudhanshualka084@gmail.com</a></li>
+          <li>Phone: <a href="tel:+919973410677">+91 99734 10677</a></li>
+          <li>Location: Bihar, India</li>
+        </ul>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+
+</html>
